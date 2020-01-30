@@ -39,4 +39,9 @@ public class CCTest {
         CC.printOneCharacterOnEachLine(chars);
         assertEquals(expectedChars, chars);
     }
+
+    @Test
+    public void shouldDoNothingIfParamIsNull() {
+        CC.printOneCharacterOnEachLine(null);
+    }
 }
