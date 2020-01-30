@@ -15,13 +15,10 @@ public class CC {
             return;
         }
 
-        //+1
-        for (final String eachChar : chars) {
-            //+2
-            if (eachChar != null && ! "".equals(eachChar)) {
-                System.out.println(eachChar);
-            }
-        }
+        List<String> charsCopy = new ArrayList<>(chars);
+        charsCopy.removeAll(Arrays.asList(null, ""));
+
+        charsCopy.forEach(System.out::println); // +1
     }
 }
 
