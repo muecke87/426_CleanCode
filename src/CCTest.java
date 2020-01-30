@@ -29,4 +29,14 @@ public class CCTest {
         assertEquals(expectedOutput, outContent.toString());
     }
 
+    @Test
+    public void shouldNotChangeParam() {
+        ArrayList<String> chars = new ArrayList<>();
+        chars.add("H");
+        ArrayList<String> expectedChars = new ArrayList<>();
+        expectedChars.add("H");
+
+        CC.printOneCharacterOnEachLine(chars);
+        assertEquals(expectedChars, chars);
+    }
 }
