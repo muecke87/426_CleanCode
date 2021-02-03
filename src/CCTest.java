@@ -33,9 +33,12 @@ public class CCTest {
     @Test
     public void shouldNotChangeParam() {
         ArrayList<String> chars = new ArrayList<>();
-        chars.add("H");
+        chars.add(null);
+        chars.add("");
+
         ArrayList<String> expectedChars = new ArrayList<>();
-        expectedChars.add("H");
+        expectedChars.add(null);
+        expectedChars.add("");
 
         CC.printOneCharacterOnEachLine(chars);
         assertEquals(expectedChars, chars);
