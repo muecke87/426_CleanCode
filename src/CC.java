@@ -1,5 +1,6 @@
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class CC {
 
@@ -9,18 +10,13 @@ public class CC {
 
     //+1
     public final static void printOneCharacterOnEachLine(final List<String> chars) {
-        //+1
-        if (chars == null) {
-            return;
-        }
-
-        //+1
-        for (final String eachChar : chars) {
-            //+2
-            if (eachChar != null && ! "".equals(eachChar)) {
-                System.out.println(eachChar);
-            }
-        }
+        Optional.ofNullable(chars)
+                .map(Collection::stream)
+                .orElseGet(Stream::empty)
+                .filter(Objects::nonNull)
+                //+1
+                .filter(item -> !item.isEmpty())
+                .forEach(System.out::println);
     }
 }
 
